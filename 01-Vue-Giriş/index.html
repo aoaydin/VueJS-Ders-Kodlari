@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script etiketi arasında bulunan linkten vue kütüphanesi dahil ediliyor  -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>VueJS Giriş</title>
+</head>
+
+<body>
+    <!-- Vue uygulamasının bağlanacağı HTML elemanını tanımlıyoruz. -->
+    <!-- "{{ }}" içerisine yazılan message Vue uygulamasının data kısmından geliyor. -->
+    <div id="firstApp">Merhaba {{message}}</div>
+    <script>
+        // Vue kütüphanesinden createApp fonksiyonunu alıyoruz.
+        const { createApp } = Vue
+
+        // createApp fonksiyonu ile yeni bir Vue uygulaması oluşturuyoruz.
+        // data fonksiyonu ile uygulamanın kullanacağı verileri tanımlıyoruz.
+        // message adlı bir veri oluşturup değerini 'Vue!' olarak atıyoruz.
+        createApp({
+            data() {
+                return {
+                    message: 'Vue!'
+                }
+            }
+        }).mount('#firstApp') // mount fonksiyonu ile uygulamayı HTML elemanına bağlıyoruz.
+    </script>
+</body>
+
+</html>
